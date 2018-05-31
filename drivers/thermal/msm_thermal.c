@@ -2813,7 +2813,7 @@ static int __ref update_offline_cores(int val)
 	uint32_t previous_cpus_offlined = 0;
 	bool pend_hotplug_req = false;
 
-	if (!core_control_enabled)
+	if (!core_control_enabled || cpu == 0 || cpu == 1)
 		return 0;
 
 	previous_cpus_offlined = cpus_offlined;
